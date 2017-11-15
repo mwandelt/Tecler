@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Example Template</title>
+</head>
+<body>
+   {{#include: header.html}}
+   <h1>Current Pricelist</h1>
+   <p>valid until {{today: +7 days | date: l, M. jS}}</p>
+   <!--{{if: products }}-->
+      <ul>
+         <!--{{repeat: products }}-->
+            <li>{{item.id}}: {{item.name}}, {{item.price|price}}</li>
+         <!--{{endrepeat}}-->
+      </ul>
+   <!--{{else}}-->
+      <p>Sorry, no products available!</p>
+   <!--{{endif}}-->
+
+   <!--{{if: remarks }}-->
+      <p><em>{{remarks}}</em></p>
+   <!--{{endif}}-->
+</body>
+</html>
