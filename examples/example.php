@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set('Europe/Berlin');
+
 require_once __DIR__ . '/../tecler.class.php';
 require_once __DIR__ . '/my_tags.class.php';
 require_once __DIR__ . '/my_filters.class.php';
@@ -18,9 +20,10 @@ $products = array (
 
 $templateCode = file_get_contents( __DIR__ . '/template.html' );
 $phpCode = $tecler->compile( $templateCode );
-echo $phpCode;
 
-// uncomment the following line in order to actually "run" the generated PHP code
+// uncomment the following line to output the generated PHP code
+// die( $phpCode );
+
 eval( '?' . '>' . $phpCode );
 
 // end of file example.php
